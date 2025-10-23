@@ -8,15 +8,21 @@
 
     <script src="https://unpkg.com/supersimpledev@3.2.1/external-library.js"></script>
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
-    //shared features for web and mobile
+    <!-- shared features for web and mobile -->
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(
-        "Welcome to SuperSimpleDev React Course"
+      const button = <button>Hello Bro</button>;
+      const paragraph = <p>Block of text</p>;
+      const div = (
+        <div>
+          <button>Hello Bro</button>
+          <p>Block of text is a total of {2 + 2}</p>
+        </div>
       );
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(div);
     </script>
   </body>
 </html>
