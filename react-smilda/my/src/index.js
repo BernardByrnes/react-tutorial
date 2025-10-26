@@ -11,12 +11,22 @@ function BookList() {
   };
 
   return (
-    <section className="booklist">
-      {books.map((book) => {
-        // const { img, title, author, id } = book;
-        return <Book {...book} key={book.id} getBook={getBook} />;
-      })}
-    </section>
+    <>
+      <h1>Amazon Best Sellers</h1>
+      <section className="booklist">
+        {books.map((book, index) => {
+          // const { img, title, author, id } = book;
+          return (
+            <Book
+              {...book}
+              key={book.id}
+              getBook={getBook}
+              number={index + 1}
+            />
+          );
+        })}
+      </section>
+    </>
   );
 }
 

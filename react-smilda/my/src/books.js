@@ -1,8 +1,11 @@
+import image1 from "./images/image-1.jpg";
+
 export const books = [
   {
     author: "Mel Robbins",
     title: "The Let Them Theory",
-    img: "./images/image-1.jpg",
+    img: require("./images/image-1.jpg"),
+    // img: image1,
     id: 1,
   },
   {
