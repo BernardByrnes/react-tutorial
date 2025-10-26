@@ -24,6 +24,8 @@ const books = [
 ];
 
 function BookList() {
+  const someValue = "shakeandbake"
+  
   return (
     <section className="booklist">
       <EventExamples />
@@ -38,15 +40,23 @@ function BookList() {
 // do not use index as key unless the list will never change
 
 const EventExamples = () => {
-  const handleFormInput = () => {
+  const handleFormInput = (e) => {
+    console.log(e);
+    console.log(e.target.value);
+    console.log(e.target.name);
     console.log("handle form input");
   };
   const handleButtonClick = () => {
     alert("handle button click");
   };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log("handle Form Submisiion");
+  };
+
   return (
     <section>
-      <form action="">
+      <form onSubmit={handleFormSubmission}>
         <h2>Typical form</h2>
         <input
           type="text"
@@ -54,7 +64,10 @@ const EventExamples = () => {
           onChange={handleFormInput}
           style={{ margin: "1rem 0" }}
         />
+        <br />
+        <button type="submit">Submit</button>
       </form>
+      <br />
       <button onClick={handleButtonClick}>Click Me</button>
     </section>
   );
@@ -63,10 +76,14 @@ const EventExamples = () => {
 const Book = ({ img, title, author, children }) => {
   // console.log(props);
   // const { img, title, author } = props;
+
+
+  };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button onClick={}>Display Title</button>
       <h4>{author.toUpperCase()}</h4>
       {children}
     </article>
