@@ -9,7 +9,7 @@ const Book = (props) => {
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={getSingleBook}>Display Title</button>
+      <button onClick={getSingleBook}>Read Now</button>
       <h4>{author.toUpperCase()}</h4>
       <span className="number">#{number}</span>
     </article>
