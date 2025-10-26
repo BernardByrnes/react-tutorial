@@ -26,13 +26,39 @@ const books = [
 function BookList() {
   return (
     <section className="booklist">
+      <EventExamples />
       {books.map((book) => {
-        const { img, title, author } = book;
-        return <Book img={img} title={title} author={author} />;
+        // const { img, title, author, id } = book;
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
 }
+
+// do not use index as key unless the list will never change
+
+const EventExamples = () => {
+  const handleFormInput = () => {
+    console.log("handle form input");
+  };
+  const handleButtonClick = () => {
+    alert("handle button click");
+  };
+  return (
+    <section>
+      <form action="">
+        <h2>Typical form</h2>
+        <input
+          type="text"
+          name="example"
+          onChange={handleFormInput}
+          style={{ margin: "1rem 0" }}
+        />
+      </form>
+      <button onClick={handleButtonClick}>Click Me</button>
+    </section>
+  );
+};
 
 const Book = ({ img, title, author, children }) => {
   // console.log(props);
