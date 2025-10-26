@@ -21,6 +21,7 @@ body {
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 }
 .book {
@@ -57,7 +58,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .book h2:hover {
@@ -69,4 +70,24 @@ body {
   font-size: 0.75rem;
   margin-top: 0.5rem;
   letter-spacing: 2px;
+}
+
+p {
+  color: #f1f5f8;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
