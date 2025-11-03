@@ -24,7 +24,15 @@ const FetchData = () => {
         {users.map((user) => {
           const { id, login, avatar_url, html_url } = user;
           console.log(user);
-          return <li key={user.id}></li>;
+          return (
+            <li key={user.id}>
+              <img src={avatar_url} alt={login} />
+              <div>
+                <h5>{login}</h5>
+                <a href={html_url}>Profile</a>
+              </div>
+            </li>
+          );
         })}
       </ul>
     </section>
