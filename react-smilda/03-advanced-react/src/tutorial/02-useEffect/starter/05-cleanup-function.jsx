@@ -18,7 +18,7 @@ const RandomComponent = () => {
       //some logic
     };
     window.addEventListener("scroll", someFunc);
-    return () => removeEventListener("scroll");
+    return () => removeEventListener("scroll", someFunc);
   }, []);
 
   return <h1>hello there</h1>;
