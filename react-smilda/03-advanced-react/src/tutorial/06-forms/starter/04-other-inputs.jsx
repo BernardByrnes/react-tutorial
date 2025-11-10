@@ -22,3 +22,38 @@ const OtherInputs = () => {
   );
 };
 export default OtherInputs;
+
+// 1️⃣ Ease out — starts fast, slows down
+gsap.to(".box", {
+  x: 300,
+  duration: 2,
+  ease: "power2.out"
+});
+
+// 2️⃣ Ease in — starts slow, speeds up
+gsap.to(".box", {
+  x: 300,
+  duration: 2,
+  ease: "power2.in"
+});
+
+// 3️⃣ Ease in-out — smooth both ways
+gsap.to(".box", {
+  x: 300,
+  duration: 2,
+  ease: "power2.inOut"
+});
+
+// 4️⃣ Bounce
+gsap.to(".box", {
+  y: 300,
+  duration: 2,
+  ease: "bounce.out"
+});
+
+// 5️⃣ Elastic
+gsap.to(".box", {
+  x: 300,
+  duration: 2,
+  ease: "elastic.out(1, 0.3)"
+});
