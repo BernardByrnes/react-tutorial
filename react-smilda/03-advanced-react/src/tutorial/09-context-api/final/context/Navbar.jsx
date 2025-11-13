@@ -27,3 +27,20 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS animatin, transitions and transforms</title>
+
+    <!-- OUR STYLESHEET -->
+    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  </head>
+
+  <body>
+    <a href="#"><span>B</span>utton</a>
+  </body>
+</html>
