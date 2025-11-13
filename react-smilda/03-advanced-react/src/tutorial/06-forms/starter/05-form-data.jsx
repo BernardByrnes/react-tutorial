@@ -14,6 +14,7 @@ const UncontrolledInputs = () => {
     console.log([...formData.entries()]);
     const newUser = Object.fromEntries(formData);
     console.log(newUser);
+    e.currentTarget.reset();
     // console.log(email);
   };
   return (
