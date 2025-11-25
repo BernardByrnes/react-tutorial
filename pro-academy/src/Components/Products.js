@@ -1,6 +1,15 @@
 import "../app.css";
 
 let productCount = 0;
+let imageUrl = require("../images/milk-glass.png");
+let isAvailable = "Available";
+let badgeClass = "badge-margin badge";
+badgeClass += isAvailable === "Available" ? " bg-success" : " bg-danger";
+
+let style = {
+  padding: "0px 20px",
+  "font-size": 14,
+};
 
 function displayFormattedCount() {
   return productCount > 0 ? productCount : <h1>Zero</h1>;
@@ -18,14 +27,20 @@ function Products() {
               fuga autem maiores necessitatibus.
             </p>
             <div className="d-flex align-items-center justify-content-start mt-1">
-              <h6 className="font-weight-bold my-2">$120.00</h6>
+              <h6
+                className="font-weight-bold my-2"
+                style={{ "margin-right": 20 }}
+              >
+                $120.00
+              </h6>
               <button className="btn btn-primary">-</button>
-              <span>{displayFormattedCount()}</span>
+              <span style={style}>{displayFormattedCount()}</span>
               <button className="btn btn-primary">+</button>
+              <span className={badgeClass}>{isAvailable}</span>
             </div>
           </div>
           <img
-            src="" // put a real image url here
+            src={imageUrl} // put a real image url here
             alt="Fresh milk"
             width="200"
             className="ml-lg-5 order-1 order-lg-2"
