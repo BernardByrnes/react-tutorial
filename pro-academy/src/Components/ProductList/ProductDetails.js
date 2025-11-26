@@ -1,12 +1,6 @@
 import Button from "./Button";
-import React from "react";
-
-let productCount = 0;
-
-function displayFormattedCount() {
-  return productCount > 0 ? productCount : <h1>Zero</h1>;
-}
-
+import React, { useState } from "react";
+// https://www.youtube.com/watch?v=Sc64ZiW2xPA
 let style = {
   padding: "0px 20px",
   "font-size": 14,
@@ -16,14 +10,21 @@ const ProductDetails = (props) => {
   let badgeClass = "badge-margin badge ";
   badgeClass += props.isAvailable ? "bg-success" : "bg-danger";
 
+  // let productCount = 0;
+  let [productCount, setCount] = useState(0);
+
+  function displayFormattedCount() {
+    return productCount > 0 ? productCount : <h1>Zero</h1>;
+  }
+
   let incrementProductCount = function () {
-    productCount++;
-    console.log(productCount);
+    // productCount++;
+    // console.log(productCount);
+    setCount(++productCount);
   };
 
   let decrementProductCount = function () {
-    productCount--;
-    console.log(productCount);
+    setCount(--productCount);
   };
 
   return (

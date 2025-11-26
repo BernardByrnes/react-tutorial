@@ -1,5 +1,5 @@
 import React from "react";
-import "../app.css";
+// import ".././app.css";
 import ProductDetails from "./ProductDetails";
 
 let style = {
