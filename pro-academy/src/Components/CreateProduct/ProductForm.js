@@ -4,7 +4,7 @@ const ProductForm = () => {
   let [pName, setName] = useState("");
   let [pPrice, setPrice] = useState("");
   let [pDesc, setDescription] = useState("");
-  let [pAvailable, setAvailability] = useState("");
+  let [pAvailable, setAvailability] = useState(false);
   let [pImageUrl, setImageUrl] = useState("");
 
   // let [userInput, updateUserInput] = useState({
@@ -65,7 +65,13 @@ const ProductForm = () => {
       image: pImageUrl,
       price: Number(pPrice),
     };
-    console.log(product);
+    setAvailability(false);
+    setDescription("");
+    setImageUrl("");
+    setName("");
+    setPrice("");
+
+    product.createProduct(product);
   }
 
   return (
@@ -77,6 +83,7 @@ const ProductForm = () => {
           className="form-control"
           id="name"
           placeholder="Product Name"
+          value={pName}
           onChange={nameInputHandler}
         />
       </div>
@@ -89,6 +96,7 @@ const ProductForm = () => {
           className="form-control"
           id="price"
           placeholder="Product Price"
+          value={pPrice}
           onChange={priceInputHandler}
         />
       </div>
@@ -100,6 +108,7 @@ const ProductForm = () => {
           className="form-control"
           id="description"
           placeholder="Product Description"
+          value={pDesc}
           onChange={descInputHandler}
         />
       </div>
@@ -110,6 +119,7 @@ const ProductForm = () => {
           type="checkbox"
           role="switch"
           id="isAvailable"
+          checked={pAvailable}
           onChange={availabilityInputHandler}
         />
         <label class="form-check-label" for="isAvailable">
@@ -123,6 +133,7 @@ const ProductForm = () => {
           type="file"
           className="form-control"
           id="select-image"
+          value={pImageUrl}
           onChange={imageInputHandler}
         />
       </div>

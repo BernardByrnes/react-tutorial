@@ -1,6 +1,12 @@
 import ProductForm from "./ProductForm";
+import React, { useState } from "react";
 
-const CreateProduct = () => {
+const CreateProduct = (props) => {
+  function onCreateProduct(product) {
+    // console.log(product);
+    props.createProduct(product);
+  }
+
   return (
     <div className="row">
       <div
@@ -11,7 +17,7 @@ const CreateProduct = () => {
           marginBottom: "20px",
         }}
       >
-        <ProductForm />
+        <ProductForm createProduct={onCreateProduct} />
       </div>
     </div>
   );
