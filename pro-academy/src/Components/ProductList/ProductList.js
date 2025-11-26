@@ -1,4 +1,4 @@
-import Products from "./Components/ProductList/Products";
+import Products from "./Products";
 let products = [
   {
     pID: 1,
