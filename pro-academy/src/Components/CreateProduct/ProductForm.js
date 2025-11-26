@@ -1,26 +1,75 @@
 import React, { use, useState } from "react";
 
 const ProductForm = () => {
-  let [] = useState("");
+  let [pName, setName] = useState("");
+  let [pPrice, setPrice] = useState("");
+  let [pDesc, setDescription] = useState("");
+  let [pAvailable, setAvailability] = useState("");
+  let [pImageUrl, setImageUrl] = useState("");
+
+  // let [userInput, updateUserInput] = useState({
+  //   pName: "",
+  //   pPrice: "",
+  //   pDesc: "",
+  //   pAvailable: "",
+  //   pAvailable: "",
+  //   pImageUrl: "",
+  // });
 
   function nameInputHandler(event) {
-    console.log(event.target.value);
+    setName(event.target.value);
+    // updateUserInput({
+    //   ...userInput,
+    //   pName: event.target.value,
+    // });
+    // updateUserInput((prevState) => {
+    //   return { ...prevState, pName: event.target.value };
+    // });
   }
-  function priceInputHandler() {
-    console.log(`some text entered`);
+  function priceInputHandler(event) {
+    // updateUserInput({
+    //   ...userInput,
+    //   pPrice: event.target.value,
+    // });
+    setPrice(event.target.value);
   }
-  function descInputHandler() {
-    console.log(`some text entered`);
+  function descInputHandler(event) {
+    // updateUserInput({
+    //   ...userInput,
+    //   pDesc: event.target.value,
+    // });
+    setDescription(event.target.value);
   }
-  function availabilityInputHandler() {
-    console.log(`some text entered`);
+  function availabilityInputHandler(event) {
+    // updateUserInput({
+    //   ...userInput,
+    //   pAvailable: event.target.value,
+    // });
+    setAvailability(event.target.checked);
   }
-  function imageInputHandler() {
-    console.log(`some text entered`);
+  function imageInputHandler(event) {
+    // updateUserInput({
+    //   ...userInput,
+    //   pImageUrl: event.target.value,
+    // });
+    setImageUrl(event.target.value);
+  }
+
+  function createProductEventHandler(event) {
+    event.preventDefault();
+    let product = {
+      pID: 1,
+      pName: pName,
+      desc: pDesc,
+      isAvailable: Boolean(pAvailable),
+      image: pImageUrl,
+      price: Number(pPrice),
+    };
+    console.log(product);
   }
 
   return (
-    <form className="row g-3">
+    <form className="row g-3" onSubmit={createProductEventHandler}>
       <div className="col-md-6">
         <label for="name">Product Name</label>
         <input
