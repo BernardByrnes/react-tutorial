@@ -9,3 +9,14 @@ body {
 .text-gray {
   color: #aaa;
 }
+
+.card-glass {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  color: #f8fafc;
+}
