@@ -22,6 +22,7 @@ function Products(props) {
           <ProductDetails
             price={props.price}
             isAvailable={props.isAvailable}
+            stock={props.stock}
           ></ProductDetails>
         </div>
         <img

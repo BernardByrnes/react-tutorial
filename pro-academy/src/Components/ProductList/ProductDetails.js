@@ -32,11 +32,14 @@ const ProductDetails = (props) => {
       <h6 className="font-weight-bold my-2" style={{ "margin-right": 20 }}>
         {props.price}
       </h6>
-      <Button eventHandler={decrementProductCount} disable={productCount == 0}>
+      <Button
+        eventHandler={decrementProductCount}
+        disabled={productCount === 0}
+      >
         -
       </Button>
       <span style={style}>{displayFormattedCount()}</span>
-      <Button eventHandler={incrementProductCount}>+</Button>
+      <Button eventHandler={incrementProductCount} disabled={productCount === props.stock}>+</Button>
       <span className={badgeClass}>
         {props.isAvailable ? "Available" : "Unavailable"}
       </span>
