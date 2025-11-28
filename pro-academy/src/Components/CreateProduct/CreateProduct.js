@@ -2,9 +2,19 @@ import ProductForm from "./ProductForm";
 import React, { useState } from "react";
 
 const CreateProduct = (props) => {
+  let [showForm, updateShowForm] = useState(false);
+
   function onCreateProduct(product) {
     // console.log(product);
     props.createProduct(product);
+  }
+
+  function onProductSubmittedOrCancelled() {
+    updateShowForm(false);
+  }
+
+  function onCreateNewProduct() {
+    updateShowForm(true);
   }
 
   return (
@@ -16,7 +26,17 @@ const CreateProduct = (props) => {
         // marginBottom: "20px",
       }}
     >
-      <ProductForm createProduct={onCreateProduct} />
+      {!showForm && (
+        <button className="my-btn my-btn-main" onClick={onCreateNewProduct}>
+          Create Product
+        </button>
+      )}
+      {showForm && (
+        <ProductForm
+          createProduct={onCreateProduct}
+          onCancel={onProductSubmittedOrCancelled}
+        />
+      )}
     </div>
   );
 };

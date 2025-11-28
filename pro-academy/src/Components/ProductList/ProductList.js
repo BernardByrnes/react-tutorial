@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Products from "./Products";
 
 const ProductList = (props) => {
+  if (props.newProductList.length === 0) return <h3>No Products available</h3>;
   return (
     <ul className="list-group shadow">
       {props.newProductList.map((product) => {

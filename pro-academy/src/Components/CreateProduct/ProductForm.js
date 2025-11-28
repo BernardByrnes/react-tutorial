@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 
 const ProductForm = (props) => {
   let [pName, setName] = useState("");
@@ -140,6 +140,13 @@ const ProductForm = (props) => {
 
       <button type="submit" className="btn btn-primary">
         Add Product
+      </button>
+      <button
+        type="button"
+        className="my-btn my-btn-cancel"
+        onClick={props.onCancel}
+      >
+        Cancel
       </button>
     </form>
   );
