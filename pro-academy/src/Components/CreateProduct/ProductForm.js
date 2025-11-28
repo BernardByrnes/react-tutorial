@@ -1,6 +1,6 @@
-import React, { use, useState } from "react";
+import React, {useState } from "react";
 
-const ProductForm = () => {
+const ProductForm = (props) => {
   let [pName, setName] = useState("");
   let [pPrice, setPrice] = useState("");
   let [pDesc, setDescription] = useState("");
@@ -71,7 +71,7 @@ const ProductForm = () => {
     setName("");
     setPrice("");
 
-    product.createProduct(product);
+    props.createProduct(product);
   }
 
   return (
