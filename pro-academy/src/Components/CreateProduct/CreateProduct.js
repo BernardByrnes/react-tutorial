@@ -8,17 +8,15 @@ const CreateProduct = (props) => {
   }
 
   return (
-    <div className="row">
-      <div
-        className="col-lg-8 mx-auto"
-        style={{
-          backgroundColor: "white",
-          padding: "10px 20px",
-          marginBottom: "20px",
-        }}
-      >
-        <ProductForm createProduct={onCreateProduct} />
-      </div>
+    <div
+      style={{
+        backgroundColor: "white",
+        padding: "10px 20px",
+        borderRadius: "2px",
+        // marginBottom: "20px",
+      }}
+    >
+      <ProductForm createProduct={onCreateProduct} />
     </div>
   );
 };
