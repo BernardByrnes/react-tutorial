@@ -72,6 +72,7 @@ const ProductForm = (props) => {
     setPrice("");
 
     props.createProduct(product);
+    props.onCancel();
   }
 
   return (
