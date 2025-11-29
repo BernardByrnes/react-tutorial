@@ -90,15 +90,20 @@
 
 import "./app.css";
 // import React, { useState } from "react";
-import Component1 from "./Components/part2/Component1";
-import React from "react";
+// import Component1 from "./Components/part2/Component1";
+import React, { useState } from "react";
+// import RefsDemo from "./Components/part2/RefsDemo";
 
 const app = () => {
+  let [resourceType, setResourceType] = useState("Home");
+
   return (
-    <>
-      <h1>This is the App Component</h1>
-      <Component1 />
-    </>
+    <div className="App">
+      <button>HOME</button>
+      <button>ABOUT</button>
+      <button>CONTACT</button>
+      <h3></h3>
+    </div>
   );
 };
 export default app;
