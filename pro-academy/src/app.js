@@ -91,19 +91,42 @@
 import "./app.css";
 // import React, { useState } from "react";
 // import Component1 from "./Components/part2/Component1";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import RefsDemo from "./Components/part2/RefsDemo";
 
-const app = () => {
+const App = () => {
+  console.log(`RE-RENDERED`);
   let [resourceType, setResourceType] = useState("Home");
+  useEffect(() => {
+    console.log(resourceType);
+  }, [resourceType]);
 
   return (
     <div className="App">
-      <button>HOME</button>
-      <button>ABOUT</button>
-      <button>CONTACT</button>
-      <h3></h3>
+      <button
+        onClick={() => {
+          setResourceType("Home");
+        }}
+      >
+        HOME
+      </button>
+      <button
+        onClick={() => {
+          setResourceType("About");
+        }}
+      >
+        ABOUT
+      </button>
+
+      <button
+        onClick={() => {
+          setResourceType("Contact");
+        }}
+      >
+        CONTACT
+      </button>
+      <h3>{resourceType}</h3>
     </div>
   );
 };
-export default app;
+export default App;
