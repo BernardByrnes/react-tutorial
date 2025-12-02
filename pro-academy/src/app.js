@@ -92,6 +92,7 @@ import "./app.css";
 // import React, { useState } from "react";
 // import Component1 from "./Components/part2/Component1";
 import React, { useState, useEffect } from "react";
+import Demo from "./Components/reducerDemo/Demo";
 // import RefsDemo from "./Components/part2/RefsDemo";
 
 const App = () => {
@@ -102,31 +103,34 @@ const App = () => {
   }, [resourceType]);
 
   return (
-    <div className="App">
-      <button
-        onClick={() => {
-          setResourceType("Home");
-        }}
-      >
-        HOME
-      </button>
-      <button
-        onClick={() => {
-          setResourceType("About");
-        }}
-      >
-        ABOUT
-      </button>
+    <>
+      <Demo />
+    </>
+    // <div className="App">
+    //   <button
+    //     onClick={() => {
+    //       setResourceType("Home");
+    //     }}
+    //   >
+    //     HOME
+    //   </button>
+    //   <button
+    //     onClick={() => {
+    //       setResourceType("About");
+    //     }}
+    //   >
+    //     ABOUT
+    //   </button>
 
-      <button
-        onClick={() => {
-          setResourceType("Contact");
-        }}
-      >
-        CONTACT
-      </button>
-      <h3>{resourceType}</h3>
-    </div>
+    //   <button
+    //     onClick={() => {
+    //       setResourceType("Contact");
+    //     }}
+    //   >
+    //     CONTACT
+    //   </button>
+    //   <h3>{resourceType}</h3>
+    // </div>
   );
 };
 export default App;
