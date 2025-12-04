@@ -1,8 +1,17 @@
 import React from "react";
 import { useState, useReducer } from "react";
-import { data } from "../../../data";
+import { data, people } from "../../../data";
+
+const defaultState = {
+  people: data,
+};
+
+const reducer = () => {};
+
 const ReducerBasics = () => {
   const [people, setPeople] = React.useState(data);
+
+  const [state, dispatch] = useReducer(reducer, defaultState);
 
   const removeItem = (id) => {
     // let newPeople = people.filter((person) => person.id !== id);
@@ -50,3 +59,14 @@ const ReducerBasics = () => {
 };
 
 export default ReducerBasics;
+
+function ClickTrackers() {
+  const clickCount = useRef(0);
+
+  const handleClick = () => {
+    clickCount.current++;
+    console.log("Clicked:", clickCount.current);
+  };
+
+  return <button onClick={handleClick}>Click me (UI never changes)</button>;
+}
