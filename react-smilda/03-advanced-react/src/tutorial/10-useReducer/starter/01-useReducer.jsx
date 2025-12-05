@@ -59,14 +59,3 @@ const ReducerBasics = () => {
 };
 
 export default ReducerBasics;
-
-function ClickTrackers() {
-  const clickCount = useRef(0);
-
-  const handleClick = () => {
-    clickCount.current++;
-    console.log("Clicked:", clickCount.current);
-  };
-
-  return <button onClick={handleClick}>Click me (UI never changes)</button>;
-}
