@@ -4,12 +4,21 @@ import { data, people } from "../../../data";
 
 const defaultState = {
   people: data,
+  isLoading: false,
 };
 
-const reducer = () => {};
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
+
+const reducer = (state, action) => {
+  if (action.type === CLEAR_LIST) {
+    return { ...state, people: [] };
+  }
+};
 
 const ReducerBasics = () => {
-  const [people, setPeople] = React.useState(data);
+  // const [people, setPeople] = React.useState(data);
 
   const [state, dispatch] = useReducer(reducer, defaultState);
 
@@ -19,16 +28,17 @@ const ReducerBasics = () => {
   };
 
   const clearList = () => {
+    dispatch({ type: CLEAR_LIST });
     // setPeople([]);
   };
 
   const resetList = () => {
     // setPeople(data);
   };
-
+  console.log(state);
   return (
     <div>
-      {people.map((person) => {
+      {state.people.map((person) => {
         const { id, name } = person;
         return (
           <div key={id} className="item">
@@ -37,7 +47,7 @@ const ReducerBasics = () => {
           </div>
         );
       })}
-      {people.length < 1 ? (
+      {state.people.length < 1 ? (
         <button
           className="btn"
           style={{ marginTop: "2rem" }}
@@ -49,7 +59,7 @@ const ReducerBasics = () => {
         <button
           className="btn"
           style={{ marginTop: "2rem" }}
-          onClick={() => setPeople([])}
+          onClick={clearList}
         >
           clear items
         </button>
