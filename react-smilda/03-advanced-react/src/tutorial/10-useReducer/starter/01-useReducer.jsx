@@ -1,20 +1,14 @@
 import React from "react";
 import { useState, useReducer } from "react";
 import { data, people } from "../../../data";
+import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from "./actions";
+import reducer from "./reducer";
+
+reducer;
 
 const defaultState = {
   people: data,
   isLoading: false,
-};
-
-const CLEAR_LIST = "CLEAR_LIST";
-const RESET_LIST = "RESET_LIST";
-const REMOVE_ITEM = "REMOVE_ITEM";
-
-const reducer = (state, action) => {
-  if (action.type === CLEAR_LIST) {
-    return { ...state, people: [] };
-  }
 };
 
 const ReducerBasics = () => {
@@ -23,6 +17,7 @@ const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const removeItem = (id) => {
+    dispatch({ type: REMOVE_ITEM, payload: { id } });
     // let newPeople = people.filter((person) => person.id !== id);
     // setPeople(newPeople);
   };
@@ -33,6 +28,7 @@ const ReducerBasics = () => {
   };
 
   const resetList = () => {
+    dispatch({ type: RESET_LIST });
     // setPeople(data);
   };
   console.log(state);
