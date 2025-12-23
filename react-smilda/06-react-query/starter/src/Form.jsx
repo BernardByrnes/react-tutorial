@@ -6,7 +6,7 @@ import Title from "../../../05-axios-tutorial/src/components/Title";
 const Form = () => {
   const [newItemName, setNewItemName] = useState("");
 
-  const result = useMutation({
+  const { mutate: createTask, isLoading } = useMutation({
     mutationFn: () => customFetch.post("/", { title: "some title" }),
   });
 
@@ -23,7 +23,7 @@ const Form = () => {
           value={newItemName}
           onChange={(event) => setNewItemName(event.target.value)}
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" disabled={isLoading}>
           add task
         </button>
       </div>
