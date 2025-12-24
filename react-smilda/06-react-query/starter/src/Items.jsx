@@ -3,7 +3,7 @@ import SingleItem from "./SingleItem";
 import customFetch from "./utils";
 
 const Items = () => {
-  const { isLoading, data } = useQuery({
+  const { isLoading, data, isError, error } = useQuery({
     queryKey: ["tasks"],
     queryFn: () => customFetch.get("/"),
   });
@@ -11,9 +11,13 @@ const Items = () => {
     return <p style={{ marginTop: "1rem" }}>LOADING...</p>;
   }
 
+  if (isError) {
+    return <p style={{ marginTop: "1rem" }}>there was an error...</p>;
+  }
+
   return (
     <div className="items">
-      {data.data.tasklist.map((item) => {
+      {data.data.taskList.map((item) => {
         return <SingleItem key={item.id} item={item} />;
       })}
     </div>
