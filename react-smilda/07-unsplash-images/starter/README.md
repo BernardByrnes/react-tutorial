@@ -129,11 +129,11 @@ Finally, you can add CSS to your application to style the components and provide
 #### Dark Theme Class - Code
 
 ```js
-const body = document.querySelector('body');
-body.classList.toggle('dark-theme', newDarkTheme);
+const body = document.querySelector("body");
+body.classList.toggle("dark-theme", newDarkTheme);
 
 // alternative setup
-document.body.classList.toggle('dark-theme', newDarkTheme);
+document.body.classList.toggle("dark-theme", newDarkTheme);
 ```
 
 const body = document.querySelector('body'); - This line selects the body element of the current document using the document.querySelector() method, which returns the first element that matches the specified selector. In this case, it is selecting the body element.
@@ -155,8 +155,7 @@ When you specify the queryKey array in the options object for useQuery, you are 
 The queryKey array is used by useQuery to identify which data the query is fetching. When the queryKey array changes, useQuery assumes that the data being fetched has changed, and it re-runs the queryFn to fetch the updated data.
 
 In this case, searchTerm is the user's search input, and it is used to modify the API request URL. By including searchTerm in the queryKey array, you are telling useQuery to re-run the queryFn whenever the user's search input changes, in order to fetch updated data based on the new search term.
-
-Therefore, without including searchTerm in the queryKey array, the useQuery hook would not re-fetch data when the user performs a new search.
+2A256JVytac6w3r6u4k_fsDe8_8kZZPC36OTZ2bBHdY Therefore, without including searchTerm in the queryKey array, the useQuery hook would not re-fetch data when the user performs a new search.
 
 #### Vite ENV Vars
 
