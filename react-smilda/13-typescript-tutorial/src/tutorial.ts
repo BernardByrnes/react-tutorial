@@ -67,13 +67,49 @@
 //   year: 2020,
 //   color: "blue",
 // };
-let car1: { brand: string; year: number } = {
-  brand: "toyota",
-  year: 2020,
-};
+// let car1: { brand: string; year: number } = {
+//   brand: "toyota",
+//   year: 2020,
+// };
 
-let book = { title: "book", cost: 20 };
-let pen = { title: "pen", cost: 10 };
-let noteBook = { title: "book" };
+// let book = { title: "book", cost: 20 };
+// let pen = { title: "pen", cost: 10 };
+// let noteBook = { title: "book" };
 
-let items = [];
+// let items: { readonly title: string; cost?: number }[] = [book, pen, noteBook];
+// items[0].title = "new book";
+
+// let bike: { brand: string; year: number } = { brand: "kawasaki", year: 2024 };
+// let laptop: { brand: string; year: number } = { brand: "Dell", year: 2021 };
+// let laptop_2: { brand: string; year: number } = {
+//   brand: "Toshiba",
+//   year: 2018,
+// };
+
+// let product1 = { title: "shirt", price: 30 };
+// let product2 = { title: "jacket" };
+
+// let products: { title: string; price?: number }[] = [product1, product2];
+
+//^ #==============================================FUNCTIONS=================================
+
+// function sayHi(name: string) {
+//   console.log(`hello there ${name.toUpperCase()}`);
+// }
+
+// sayHi("Ben");
+// sayHi(4);
+
+// function calculateDiscount(price: number) {
+//   return price * 0.9;
+// }
+
+// const finalPrice = calculateDiscount(230);
+
+const names: string[] = ["john", "jane", "jim", "jill"];
+
+function isNameInList(name: string): boolean {
+  return names.includes(name);
+}
+
+console.log(isNameInList("john"));
