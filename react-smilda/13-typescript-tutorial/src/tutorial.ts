@@ -182,23 +182,80 @@ import { id } from "zod/v4/locales";
 
 // createStudent(dude1);
 
-const john: { id: number; name: string; isActive: boolean } = {
-  id: 1,
-  name: "john",
-  isActive: true,
-};
-const susan: { id: number; name: string; isActive: boolean } = {
-  id: 1,
-  name: "susan",
-  isActive: false,
-};
+// const john: { id: number; name: string; isActive: boolean } = {
+//   id: 1,
+//   name: "john",
+//   isActive: true,
+// };
+// const susan: { id: number; name: string; isActive: boolean } = {
+//   id: 1,
+//   name: "susan",
+//   isActive: false,
+// };
 
-function createUser(user: { id: number; name: string; isActive: boolean }): {
-  id: number;
-  name: string;
-  isActive: boolean;
-} {
-  console.log(`Hello there ${user.name.toUpperCase()} !!!`);
+// function createUser(user: { id: number; name: string; isActive: boolean }): {
+//   id: number;
+//   name: string;
+//   isActive: boolean;
+// } {
+//   console.log(`Hello there ${user.name.toUpperCase()} !!!`);
 
-  return user;
+//   return user;
+// }
+
+// let theme: "dark" | "light" | "blue" | "green" = "blue";
+
+// theme = "green";
+
+// type Employee = { id: number; name: string; department: string };
+// type Manager = { id: number; name: string; employees: Employee[] };
+
+// type Staff = Employee | Manager;
+
+// function printStaffDetails(staff: Staff): void {
+//   if ("employees" in staff) {
+//     console.log(
+//       `${staff} is a Manager and has ${staff.employees.length} employees`
+//     );
+//   } else {
+//     console.log(`${staff} is an employee in the ${staff.department}`);
+//   }
+// }
+
+// const alice: Employee = {
+//   id: 1,
+//   name: "alice",
+//   department: "sales",
+// };
+
+// const steve: Employee = {
+//   id: 2,
+//   name: "steve",
+//   department: "HR",
+// };
+
+// const Bob: Manager = {
+//   id: 3,
+//   name: "Bobby",
+//   employees: [alice, steve],
+// };
+
+// ===============================INTERFACE==================================
+
+interface Book {
+  readonly isbn: number;
+  title: string;
+  author: string;
+  genre?: string;
+  printAuthor(): void;
 }
+
+const deepWork: Book = {
+  isbn: 123,
+  title: "deep work",
+  author: "cal newport",
+  genre: "self-help",
+  printAuthor() {
+    console.log(this.author);
+  },
+};
