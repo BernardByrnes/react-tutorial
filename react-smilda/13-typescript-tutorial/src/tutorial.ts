@@ -1,5 +1,9 @@
 // console.log("TypeScript tutorial");
 
+import { id } from "zod/v4/locales";
+
+// import { number } from "zod/v4";
+
 // let awesomeName = "shakeAndBake";
 
 // awesomeName = awesomeName.toUpperCase();
@@ -105,11 +109,96 @@
 // }
 
 // const finalPrice = calculateDiscount(230);
+// ============================
+// const names: string[] = ["john", "jane", "jim", "jill"];
 
-const names: string[] = ["john", "jane", "jim", "jill"];
+// function isNameInList(name: string): boolean {
+//   return names.includes(name);
+// }
 
-function isNameInList(name: string): boolean {
-  return names.includes(name);
+// console.log(isNameInList("john"));
+// let nameToCheck: string = "jane";
+
+// if (isNameInList(nameToCheck)) {
+//   console.log(`${nameToCheck} is in the list`);
+// } else {
+//   console.log(`${nameToCheck} is NOT in the list`);
+// }
+// ==============================
+// function calculateFinalPrice(
+//   originalPrice: number,
+//   discount: number = 0
+// ): number {
+//   return originalPrice - discount;
+// }
+// =============================
+
+// function sum(message: string, ...numbers: number[]): string {
+//   const doubled = numbers.map((num) => num * 2);
+//   console.log(doubled);
+
+//   let total = numbers.reduce((previous, current) => {
+//     return previous + current;
+//   }, 0);
+//   return `${message} ${total}`;
+// }
+
+// let result = sum("The total is:", 1, 2, 3, 4, 5); // result will be "The total is: 15"
+// ==============================
+
+// function processInput(input: string | number) {
+//   if (typeof input === "number") {
+//     return input * 2;
+//   } else {
+//     console.log(input);
+//   }
+// }
+
+// console.log(processInput(2));
+// console.log(processInput("soccer"));
+
+// ==========================OBJECTS AS PARAMETERS==========================
+
+// function createEmployee({ id }: { id: number }): {
+//   id: number;
+//   isActive: boolean;
+// } {
+//   return { id, isActive: id % 2 === 0 };
+// }
+
+// const first = createEmployee({ id: 1 });
+// const second = createEmployee({ id: 4 });
+
+// console.log(first, second);
+
+// function createStudent(student: { id: number; name: string }): void {
+//   console.log(`welcome to the course ${student.name.toUpperCase()!!!}`);
+// }
+
+// const dude1 = {
+//   id: 4,
+//   name: "Anna",
+// };
+
+// createStudent(dude1);
+
+const john: { id: number; name: string; isActive: boolean } = {
+  id: 1,
+  name: "john",
+  isActive: true,
+};
+const susan: { id: number; name: string; isActive: boolean } = {
+  id: 1,
+  name: "susan",
+  isActive: false,
+};
+
+function createUser(user: { id: number; name: string; isActive: boolean }): {
+  id: number;
+  name: string;
+  isActive: boolean;
+} {
+  console.log(`Hello there ${user.name.toUpperCase()} !!!`);
+
+  return user;
 }
-
-console.log(isNameInList("john"));
