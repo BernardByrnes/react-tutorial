@@ -242,20 +242,42 @@ import { id } from "zod/v4/locales";
 
 // ===============================INTERFACE==================================
 
-interface Book {
-  readonly isbn: number;
-  title: string;
-  author: string;
-  genre?: string;
-  printAuthor(): void;
+// interface Book {
+//   readonly isbn: number;
+//   title: string;
+//   author: string;
+//   genre?: string;
+//   printAuthor(): void;
+//   printTitle(message: string): string;
+// }
+
+// const deepWork: Book = {
+//   isbn: 123,
+//   title: "deep work",
+//   author: "cal newport",
+//   genre: "self-help",
+//   printAuthor() {
+//     console.log(this.author);
+//   },
+//   printTitle(message) {
+//     return `${this.title} ${message}`;
+//   },
+// };
+
+interface Computer {
+  readonly id: number; // cannot be changed once initialized
+  brand: string;
+  ram: number;
+  upgradeRam(increase: number): number;
+  storage?: number; // optional property
 }
 
-const deepWork: Book = {
-  isbn: 123,
-  title: "deep work",
-  author: "cal newport",
-  genre: "self-help",
-  printAuthor() {
-    console.log(this.author);
+const laptop: Computer = {
+  id: 1,
+  brand: "Toshiba",
+  ram: 64,
+  upgradeRam(amount) {
+    this.ram += amount;
+    return this.ram;
   },
 };
