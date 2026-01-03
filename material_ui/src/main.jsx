@@ -9,19 +9,32 @@ import {
 } from "@mui/material/styles";
 
 const theme = createTheme({
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "blue",
-          color: "white",
-          padding: "8px 16px",
-          borderRadius: 6,
-        },
-      },
+  palette: {
+    primary: {
+      main: "#fb923c",
+    },
+    secondary: {
+      main: "#0f766e",
+    },
+    customColor: {
+      navy: "#0f172a",
     },
   },
 });
+// const theme = createTheme({
+//   components: {
+//     MuiButton: {
+//       styleOverrides: {
+//         text: {
+//           backgroundColor: "blue",
+//           color: "white",
+//           padding: "8px 16px",
+//           borderRadius: 6,
+//         },
+//       },
+//     },
+//   },
+// });
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
