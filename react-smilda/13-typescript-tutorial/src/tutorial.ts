@@ -281,3 +281,97 @@ const laptop: Computer = {
     return this.ram;
   },
 };
+// ===================================================================================
+interface Person {
+  name: string;
+}
+
+interface DogOwner extends Person {
+  dogName: string;
+}
+
+interface Manager extends Person {
+  managePeople(): void;
+  delegateTask(): void;
+}
+
+function getEmployee(): Person | DogOwner | Manager {
+  const random = Math.random();
+
+  if (random < 0.33) {
+    return {
+      name: "John",
+    };
+  } else if (random < 0.66) {
+    return {
+      name: "Ben",
+      dogName: "Rex",
+    };
+  } else {
+    return {
+      name: "Bobby",
+      managePeople() {
+        console.log("Managing people...");
+      },
+      delegateTask() {
+        console.log("Delegating task...");
+      },
+    };
+  }
+}
+
+/**
+ * Custom type guard
+ */
+function isManager(employee: Person | DogOwner | Manager): employee is Manager {
+  return "delegateTask" in employee;
+}
+
+const employee = getEmployee();
+
+console.log(employee.name);
+
+if (isManager(employee)) {
+  employee.managePeople();
+  employee.delegateTask();
+} else {
+  console.log("This employee is not a manager.");
+}
+
+// =====================TUPLES==================================
+
+let person: [string, number] = ["cow", 34];
+
+let date: readonly [day: number, month: number, year: number] = [12, 17, 2025];
+
+function getPerson(): [string, number] {
+  return ["john", 25];
+}
+
+let susan: [string, number?] = ["awesome"];
+
+// ========================enum==============================
+
+enum UserRole {
+  Admin,
+  Manager,
+  Employee,
+}
+
+type User = {
+  id: number;
+  name: string;
+  role: UserRole;
+  contact: [string, string];
+};
+
+function createUser(user: User): User {
+  return user;
+}
+
+const user: User = createUser({
+  id: 1,
+  name: "john doe",
+  role: UserRole.Admin,
+  contact: ["john@gmail.com", "123-456-789"],
+});
