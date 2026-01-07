@@ -3,7 +3,11 @@ import SendIcon from "@mui/icons-material/Send";
 import Test from "./Test";
 
 function App() {
-  return <Test />;
+  return (
+    <div>
+      <Test />
+    </div>
+  );
 }
 
 export default App;
