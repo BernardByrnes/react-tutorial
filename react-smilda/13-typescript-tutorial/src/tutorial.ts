@@ -375,3 +375,5 @@ const user: User = createUser({
   role: UserRole.Admin,
   contact: ["john@gmail.com", "123-456-789"],
 });
+
+console.log(user);
