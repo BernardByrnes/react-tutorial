@@ -2,7 +2,6 @@ import {
   Button,
   Typography,
   IconButton,
-  Badge,
   TextField,
   FormControlLabel,
   FormGroup,
@@ -11,14 +10,16 @@ import {
   RadioGroup,
   FormLabel,
   Radio,
+  AppBar,
+  FormControl,
+  Select,
+  Tabs,
+  Tab,
 } from "@mui/material";
-// import { LoadingButton } from "@mui/lab";
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 
+import Toolbar from "@mui/material/Toolbar";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const Test = () => {
@@ -28,6 +29,7 @@ const Test = () => {
     password: "",
     subscribe: false,
     age: "",
+    Gender: "",
   });
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -43,6 +45,28 @@ const Test = () => {
 
   return (
     <div>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Tabs value={0} onChange={handleChange} centered>
+            <Tab label="Item One" />
+            <Tab label="Item Two" />
+            <Tab label="Item Three" />
+          </Tabs>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
       <form
         onSubmit={handleSubmit}
         style={{
@@ -116,14 +140,8 @@ const Test = () => {
         </FormGroup>
 
         <FormControl fullWidth>
-          <InputLabel id="age-label">Age</InputLabel>
-          <Select
-            labelId="age-label"
-            id="age-select"
-            name="age"
-            value={inputs.age}
-            onChange={handleChange}
-          >
+          <InputLabel>Age</InputLabel>
+          <Select name="age" value={inputs.age} onChange={handleChange}>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
@@ -134,8 +152,9 @@ const Test = () => {
           <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
+            onChange={handleChange}
             defaultValue="female"
-            name="radio-buttons-group"
+            name="Gender"
           >
             <FormControlLabel
               value="female"
