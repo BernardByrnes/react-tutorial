@@ -389,9 +389,9 @@ let logs: number | string[];
 // TUPLE
 let zoo: [number, string, boolean] = [1, "hippo", true];
 
-let musawo: [number, string][];
+let clinic: [number, string][];
 // ===array tuple
-musawo = [
+clinic = [
   [1, "Tina"],
   [2, "John"],
   [3, "Mable"],
