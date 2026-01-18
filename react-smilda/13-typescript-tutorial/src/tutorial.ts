@@ -377,3 +377,94 @@ const user: User = createUser({
 });
 
 console.log(user);
+// ========================= TUTORIAL2===============================
+let id: number = 5;
+console.log(id);
+
+let age: number;
+
+let logs: number | string[];
+[1, "cow", 4];
+
+// TUPLE
+let zoo: [number, string, boolean] = [1, "hippo", true];
+
+let musawo: [number, string][];
+// ===array tuple
+musawo = [
+  [1, "Tina"],
+  [2, "John"],
+  [3, "Mable"],
+];
+
+// ===UNION
+let prID: number | string;
+prID = 2;
+prID = "goat";
+
+let load: "loading" | "running" | "error";
+
+// ====enum
+// Named constants
+
+enum Direction1 {
+  up = 1,
+  down,
+  left,
+  right,
+}
+enum Direction2 {
+  up = "up",
+  down = "down",
+  left = "left",
+  right = "right",
+}
+
+console.log(Direction2.left);
+// =======OBJECTS
+
+type Users = {
+  id: number;
+  name: string;
+};
+
+const users: Users = {
+  id: 1,
+  name: "Mark",
+};
+
+// Type Assertion
+
+let cid: any = 1;
+
+// let customerId = <number>cid;
+let customerId = cid as number;
+
+// FUNCTIONS
+function addNum(x: number, y: number): number {
+  return x + y;
+}
+
+function log(message: string | number): void {
+  console.log(message);
+}
+
+// interface
+interface UserInterface {
+  readonly id: number;
+  name: string;
+  married?: string;
+  yob?: number;
+}
+
+const users1: UserInterface = {
+  id: 2,
+  name: "Jackie",
+};
+
+interface MathFunc {
+  (x: number, y: number): number;
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const sub: MathFunc = (x: number, y: number): number => x - y;
