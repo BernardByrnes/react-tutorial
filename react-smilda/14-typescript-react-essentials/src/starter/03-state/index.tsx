@@ -6,7 +6,7 @@ type Link = {
   text: string;
 };
 
-const navLinks = [
+const navLinks: Link = [
   {
     id: 1,
     url: "crazy url🤣",
@@ -25,10 +25,10 @@ const navLinks = [
 ];
 
 function Component() {
-  const [text, setText] = useState("take a break");
-  const [numb, setNumb] = useState(7);
-  const [list, setList] = useState<string[]>([]);
-  const [lists, setLists] = useState<Link[]>([]);
+  // const [text, setText] = useState("take a break");
+  // const [numb, setNumb] = useState(7);
+  // const [list, setList] = useState<string[]>([]);
+  // const [lists, setLists] = useState<Link[]>([]);
 
   return (
     <div>
