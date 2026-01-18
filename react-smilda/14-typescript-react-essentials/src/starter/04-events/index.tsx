@@ -8,10 +8,17 @@ function Component() {
     setEmail(e.target.value);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+  };
+
   return (
     <section>
       <h2>React & Typescript</h2>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
           className="form-input mb-1"
