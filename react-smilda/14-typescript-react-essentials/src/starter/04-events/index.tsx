@@ -31,6 +31,12 @@ function Component() {
           value={email}
           onChange={handleChange}
         />
+        <input
+          type="email"
+          className="form-input mb-1"
+          value={email}
+          onChange={handleChange}
+        />
         <button type="submit" className="btn btn-block">
           Submit
         </button>
