@@ -1,11 +1,11 @@
-import Component from "./final/05-challenge";
-// import Component from "./starter/04-events";
+// import Component from "./final/05-challenge";
+import Component from "./starter/06-context";
 
 function App() {
   return (
     <main>
-      <Component type="basic" name="suzan" />
-      <Component type="advanced" name="anna" email="anna@gmail.com " />
+      <h2>React</h2>
+      <Component />
     </main>
   );
 }
