@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+type Person = {
+  name: String;
+};
+
 function Component() {
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
@@ -13,6 +17,8 @@ function Component() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
     console.log(data);
+    const text = formData.get("text") as String;
+    const person: Person = { name: text };
   };
 
   return (
