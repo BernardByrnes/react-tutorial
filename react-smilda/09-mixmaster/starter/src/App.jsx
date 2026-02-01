@@ -13,6 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+        children: [
+          {
+            index: true,
+            element: <h2>Our company</h2>,
+          },
+          {
+            path: "person",
+            element: <h2>John Doe</h2>,
+          },
+        ],
       },
     ],
   },
