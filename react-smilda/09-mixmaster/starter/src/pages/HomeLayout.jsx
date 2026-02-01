@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const HomeLayout = () => {
   const navigation = useNavigation();
-  console.log(navigation);
+  // console.log(navigation);
   const isPageLoading = navigation.state === "loading";
   const value = "some value";
   return (
@@ -11,7 +11,7 @@ const HomeLayout = () => {
       <Navbar />
       <section className="page">
         {isPageLoading ? <div className="loading" /> : <Outlet />}
-        <Outlet />
+        <Outlet context={{ value }} />
       </section>
     </>
   );
