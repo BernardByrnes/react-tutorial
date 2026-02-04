@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "./components/card/Card";
+import CardList from "./components/card-list/Card-list.component";
 import "./App.css";
 
 function App() {
@@ -14,9 +14,7 @@ function App() {
 
   return (
     <>
-      {monsters.map(({ id, name, email }) => (
-        <Card key={id} name={name} email={email} id={id}></Card>
-      ))}
+      <CardList monsters={monsters}></CardList>
     </>
   );
 }
