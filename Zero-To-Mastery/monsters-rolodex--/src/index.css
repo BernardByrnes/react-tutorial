@@ -11,3 +11,45 @@ code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/* 1. Button with gradient and shadow */
+.btn-fancy {
+  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.btn-fancy:hover {
+  transform: scale(1.05);
+}
+
+/* 2. Card with soft shadow */
+.card-soft {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+/* 3. Highlighted text */
+.text-highlight {
+  background-color: #fff3bf;
+  color: #856404;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* 4. Rounded image */
+.img-rounded {
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
