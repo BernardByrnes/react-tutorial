@@ -95,3 +95,11 @@ code {
     #ffffff 20px
   );
 }
+
+/* 4. Pulse animation for icons */
+.icon-pulse {
+  display: inline-block;
+  color: #198754;
+  font-size: 32px;
+  animation: pulse 1.5s infinite;
+}
