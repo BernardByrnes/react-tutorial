@@ -129,7 +129,7 @@ export const store = configureStore({
 #### Access store value
 
 - create components/Navbar.js
-
+ 
 ```js
 import { CartIcon } from '../icons';
 import { useSelector } from 'react-redux';
